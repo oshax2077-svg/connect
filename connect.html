@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OshA • Developer Profile & Connect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #07090e;
+            --card-bg: rgba(18, 24, 38, 0.85);
+            --card-border: rgba(56, 139, 253, 0.25);
+            --primary: #58a6ff;
+            --whatsapp: #25d366;
+            --facebook: #1877f2;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Outfit', -apple-system, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 139, 253, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(35, 134, 54, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(137, 87, 229, 0.1) 0px, transparent 50%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: var(--text-main);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 36px 24px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 139, 253, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #58a6ff, #2ea043, transparent);
+            animation: shine 4s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+
+        .avatar-wrap {
+            position: relative;
+            width: 96px;
+            height: 96px;
+            margin: 0 auto 16px;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1f6feb, #2ea043);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            box-shadow: 0 8px 25px rgba(31, 111, 235, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-online {
+            position: absolute;
+            bottom: 4px;
+            right: 4px;
+            width: 18px;
+            height: 18px;
+            background-color: #3fb950;
+            border: 3px solid #0d1117;
+            border-radius: 50%;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, #ffffff, #c9d1d9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .description {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 13px 18px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+        }
+
+        .btn-link:active {
+            transform: scale(0.98);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            border-color: rgba(37, 211, 102, 0.5);
+        }
+        .btn-whatsapp:hover {
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.3);
+            border-color: rgba(220, 39, 67, 0.5);
+        }
+        .btn-instagram:hover {
+            box-shadow: 0 8px 25px rgba(220, 39, 67, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-facebook {
+            background: linear-gradient(135deg, #1877f2, #0d5bb8);
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
+            border-color: rgba(24, 119, 242, 0.5);
+        }
+        .btn-facebook:hover {
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-phone {
+            background: linear-gradient(135deg, #21262d, #161b22);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid #30363d;
+            color: #e6edf3;
+        }
+        .btn-phone:hover {
+            background: #30363d;
+            border-color: #58a6ff;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-icon {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-arrow {
+            font-size: 16px;
+            opacity: 0.8;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-link:hover .btn-arrow {
+            transform: translateX(-4px);
+        }
+
+        .phone-copy-box {
+            margin-top: 20px;
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .phone-num {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: #58a6ff;
+            direction: ltr;
+            letter-spacing: 1px;
+        }
+
+        .btn-copy {
+            background: #1f6feb;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-copy:hover {
+            background: #388bfd;
+        }
+
+        .footer {
+            margin-top: 26px;
+            font-size: 11px;
+            color: #484f58;
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avatar-wrap">
+            <div class="avatar">⚡</div>
+            <div class="badge-online"></div>
+        </div>
+        
+        <h1>OshA</h1>
+        <div class="subtitle">Apple Automation Engineer • Developer</div>
+        <p class="description">تواصل معي مباشرة عبر القنوات الرسمية بالأسفل</p>
+
+        <div class="links-group">
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/iOshA" id="link-whatsapp" class="btn-link btn-whatsapp" target="_blank">
+                <div class="btn-content">
+                    <span class="btn-icon">💬</span>
+                    <span>مراسلة عبر واتساب</span>
+                </div>
+                <span class="btn-arrow">◀</span>
+            </a>
+
+            <!-- Instagram Button -->
+            <a href="https://instagram.com/iOshA" id="link-instagram" class="btn-link btn-instagram" target="_blank">
+                <div class="btn-content">
+                    <span class="btn-icon">📸</span>
+                    <span>حساب انستجرام</span>
+                </div>
+                <span class="btn-arrow">◀</span>
+            </a>
+
+            <!-- Facebook Button -->
+            <a href="https://facebook.com/iOshA" id="link-facebook" class="btn-link btn-facebook" target="_blank">
+                <div class="btn-content">
+                    <span class="btn-icon">📘</span>
+                    <span>حساب الفيسبوك</span>
+                </div>
+                <span class="btn-arrow">◀</span>
+            </a>
+
+            <!-- Phone Call Button -->
+            <a href="tel:+201000000000" id="link-phone" class="btn-link btn-phone">
+                <div class="btn-content">
+                    <span class="btn-icon">📞</span>
+                    <span>اتصال هاتفي مباشر</span>
+                </div>
+                <span class="btn-arrow">◀</span>
+            </a>
+        </div>
+
+        <!-- Phone Display & Quick Copy Box -->
+        <div class="phone-copy-box">
+            <span class="phone-num" id="display-phone">+20 100 000 0000</span>
+            <button class="btn-copy" onclick="copyNumber()">نسخ الرقم</button>
+        </div>
+
+        <div class="footer">
+            © 2026 OshA Automation Tools • All Rights Reserved
+        </div>
+    </div>
+
+    <script>
+        // إعدادات افتراضية يمكن تعديلها مباشرة أو تمريرها في الرابط
+        const DEFAULT_CONFIG = {
+            whatsapp: "iOshA",
+            instagram: "iOshA",
+            facebook: "iOshA",
+            phone: "+20 100 000 0000"
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const wa = params.get('wa') || params.get('whatsapp') || DEFAULT_CONFIG.whatsapp;
+        const ig = params.get('ig') || params.get('instagram') || DEFAULT_CONFIG.instagram;
+        const fb = params.get('fb') || params.get('facebook') || DEFAULT_CONFIG.facebook;
+        const phone = params.get('phone') || DEFAULT_CONFIG.phone;
+
+        if (wa) {
+            const cleanWa = wa.replace(/[@]/g, '');
+            document.getElementById('link-whatsapp').href = `https://wa.me/${cleanWa}`;
+        }
+
+        if (ig) {
+            const cleanIg = ig.replace(/[@]/g, '');
+            document.getElementById('link-instagram').href = cleanIg.startsWith('http') ? cleanIg : `https://instagram.com/${cleanIg}`;
+        }
+
+        if (fb) {
+            document.getElementById('link-facebook').href = fb.startsWith('http') ? fb : `https://facebook.com/${fb}`;
+        }
+
+        if (phone) {
+            document.getElementById('link-phone').href = `tel:${phone.replace(/\s+/g, '')}`;
+            document.getElementById('display-phone').innerText = phone;
+        }
+
+        function copyNumber() {
+            const num = document.getElementById('display-phone').innerText;
+            navigator.clipboard.writeText(num).then(() => {
+                const btn = document.querySelector('.btn-copy');
+                const orig = btn.innerText;
+                btn.innerText = 'تم النسخ! ✓';
+                btn.style.background = '#2ea043';
+                setTimeout(() => {
+                    btn.innerText = orig;
+                    btn.style.background = '#1f6feb';
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>
