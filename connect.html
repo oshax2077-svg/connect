@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OshA • Developer Profile & Connect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-color: #07090e;
@@ -29,7 +32,7 @@
 
         body {
             background-color: var(--bg-color);
-            background-image: 
+            background-image:
                 radial-gradient(at 0% 0%, rgba(56, 139, 253, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(35, 134, 54, 0.12) 0px, transparent 50%),
                 radial-gradient(at 50% 50%, rgba(137, 87, 229, 0.1) 0px, transparent 50%);
@@ -68,8 +71,14 @@
         }
 
         @keyframes shine {
-            0% { left: -100%; }
-            50%, 100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
         }
 
         .avatar-wrap {
@@ -158,6 +167,7 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
             border-color: rgba(37, 211, 102, 0.5);
         }
+
         .btn-whatsapp:hover {
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
             transform: translateY(-2px);
@@ -168,6 +178,7 @@
             box-shadow: 0 6px 20px rgba(220, 39, 67, 0.3);
             border-color: rgba(220, 39, 67, 0.5);
         }
+
         .btn-instagram:hover {
             box-shadow: 0 8px 25px rgba(220, 39, 67, 0.45);
             transform: translateY(-2px);
@@ -178,6 +189,7 @@
             box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
             border-color: rgba(24, 119, 242, 0.5);
         }
+
         .btn-facebook:hover {
             box-shadow: 0 8px 25px rgba(24, 119, 242, 0.45);
             transform: translateY(-2px);
@@ -189,6 +201,7 @@
             border: 1px solid #30363d;
             color: #e6edf3;
         }
+
         .btn-phone:hover {
             background: #30363d;
             border-color: #58a6ff;
@@ -267,13 +280,14 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="avatar-wrap">
             <div class="avatar">⚡</div>
             <div class="badge-online"></div>
         </div>
-        
+
         <h1>OshA</h1>
         <div class="subtitle">Apple Automation Engineer • Developer</div>
         <p class="description">تواصل معي مباشرة عبر القنوات الرسمية بالأسفل</p>
@@ -306,21 +320,10 @@
                 <span class="btn-arrow">◀</span>
             </a>
 
-            <!-- Phone Call Button -->
-            <a href="tel:+201000000000" id="link-phone" class="btn-link btn-phone">
-                <div class="btn-content">
-                    <span class="btn-icon">📞</span>
-                    <span>اتصال هاتفي مباشر</span>
-                </div>
-                <span class="btn-arrow">◀</span>
-            </a>
+
         </div>
 
-        <!-- Phone Display & Quick Copy Box -->
-        <div class="phone-copy-box">
-            <span class="phone-num" id="display-phone">+20 100 000 0000</span>
-            <button class="btn-copy" onclick="copyNumber()">نسخ الرقم</button>
-        </div>
+
 
         <div class="footer">
             © 2026 OshA Automation Tools • All Rights Reserved
@@ -376,4 +379,5 @@
         }
     </script>
 </body>
+
 </html>
