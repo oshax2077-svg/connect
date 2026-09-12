@@ -7,7 +7,9 @@
     <title>OshA • Developer Profile & Connect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg-color: #07090e;
@@ -30,7 +32,7 @@
 
         body {
             background-color: var(--bg-color);
-            background-image: 
+            background-image:
                 radial-gradient(at 0% 0%, rgba(56, 139, 253, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(35, 134, 54, 0.12) 0px, transparent 50%),
                 radial-gradient(at 50% 50%, rgba(137, 87, 229, 0.1) 0px, transparent 50%);
@@ -70,8 +72,14 @@
         }
 
         @keyframes shine {
-            0% { left: -100%; }
-            50%, 100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            50%,
+            100% {
+                left: 100%;
+            }
         }
 
         /* Language Switcher Badge */
@@ -208,6 +216,7 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
             border-color: rgba(37, 211, 102, 0.5);
         }
+
         .btn-whatsapp:hover {
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
             transform: translateY(-2px);
@@ -218,6 +227,7 @@
             box-shadow: 0 6px 20px rgba(220, 39, 67, 0.3);
             border-color: rgba(220, 39, 67, 0.5);
         }
+
         .btn-instagram:hover {
             box-shadow: 0 8px 25px rgba(220, 39, 67, 0.45);
             transform: translateY(-2px);
@@ -228,6 +238,7 @@
             box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
             border-color: rgba(24, 119, 242, 0.5);
         }
+
         .btn-facebook:hover {
             box-shadow: 0 8px 25px rgba(24, 119, 242, 0.45);
             transform: translateY(-2px);
@@ -290,7 +301,7 @@
         </div>
 
         <h1>OshA</h1>
-        <div class="subtitle">Apple Automation Engineer • Developer</div>
+        <div class="subtitle"> Automation Engineer • Developer </div>
         <p class="description" id="desc-text">تواصل معي مباشرة عبر القنوات الرسمية بالأسفل</p>
 
         <!-- Social Channels -->
@@ -305,7 +316,7 @@
             </a>
 
             <!-- Instagram Button -->
-            <a href="https://instagram.com/iOshA" id="link-instagram" class="btn-link btn-instagram" target="_blank">
+            <a href="https://instagram.com/0shasc" id="link-instagram" class="btn-link btn-instagram" target="_blank">
                 <div class="btn-content">
                     <span class="btn-icon">📸</span>
                     <span id="txt-instagram">حساب انستجرام</span>
@@ -314,7 +325,7 @@
             </a>
 
             <!-- Facebook Button -->
-            <a href="https://facebook.com/iOshA" id="link-facebook" class="btn-link btn-facebook" target="_blank">
+            <a href="https://facebook.com/0shASC" id="link-facebook" class="btn-link btn-facebook" target="_blank">
                 <div class="btn-content">
                     <span class="btn-icon">📘</span>
                     <span id="txt-facebook">حساب الفيسبوك</span>
@@ -352,8 +363,8 @@
 
         const DEFAULT_CONFIG = {
             whatsapp: "iOshA",
-            instagram: "iOshA",
-            facebook: "iOshA"
+            instagram: "0shasc",
+            facebook: "0shASC"
         };
 
         const params = new URLSearchParams(window.location.search);
@@ -393,7 +404,7 @@
 
             try {
                 localStorage.setItem('preferred_lang', lang);
-            } catch (e) {}
+            } catch (e) { }
         }
 
         function toggleLanguage() {
