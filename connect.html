@@ -7,9 +7,7 @@
     <title>OshA • Developer Profile & Connect</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #07090e;
@@ -32,7 +30,7 @@
 
         body {
             background-color: var(--bg-color);
-            background-image:
+            background-image: 
                 radial-gradient(at 0% 0%, rgba(56, 139, 253, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(35, 134, 54, 0.12) 0px, transparent 50%),
                 radial-gradient(at 50% 50%, rgba(137, 87, 229, 0.1) 0px, transparent 50%);
@@ -52,11 +50,12 @@
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 36px 24px;
+            padding: 38px 24px 30px;
             text-align: center;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 139, 253, 0.1);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .container::before {
@@ -71,14 +70,49 @@
         }
 
         @keyframes shine {
-            0% {
-                left: -100%;
-            }
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
 
-            50%,
-            100% {
-                left: 100%;
-            }
+        /* Language Switcher Badge */
+        .lang-switch-box {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 10;
+        }
+
+        [dir="ltr"] .lang-switch-box {
+            left: auto;
+            right: 18px;
+        }
+
+        .btn-lang {
+            background: rgba(22, 27, 34, 0.85);
+            border: 1px solid rgba(56, 139, 253, 0.35);
+            color: #58a6ff;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-lang:hover {
+            background: rgba(56, 139, 253, 0.2);
+            border-color: #58a6ff;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 139, 253, 0.3);
+        }
+
+        .btn-lang:active {
+            transform: scale(0.95);
         }
 
         .avatar-wrap {
@@ -112,8 +146,13 @@
             border-radius: 50%;
         }
 
+        [dir="ltr"] .badge-online {
+            right: 4px;
+            left: auto;
+        }
+
         h1 {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
             letter-spacing: 0.5px;
             margin-bottom: 6px;
@@ -127,30 +166,32 @@
             font-weight: 600;
             color: var(--primary);
             margin-bottom: 6px;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.5px;
         }
 
         .description {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 26px;
             line-height: 1.6;
         }
 
         .links-group {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .btn-link {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 13px 18px;
-            border-radius: 14px;
+            padding: 15px 20px;
+            border-radius: 16px;
             text-decoration: none;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             transition: all 0.25s ease;
             position: relative;
@@ -167,7 +208,6 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
             border-color: rgba(37, 211, 102, 0.5);
         }
-
         .btn-whatsapp:hover {
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
             transform: translateY(-2px);
@@ -178,7 +218,6 @@
             box-shadow: 0 6px 20px rgba(220, 39, 67, 0.3);
             border-color: rgba(220, 39, 67, 0.5);
         }
-
         .btn-instagram:hover {
             box-shadow: 0 8px 25px rgba(220, 39, 67, 0.45);
             transform: translateY(-2px);
@@ -189,40 +228,25 @@
             box-shadow: 0 6px 20px rgba(24, 119, 242, 0.3);
             border-color: rgba(24, 119, 242, 0.5);
         }
-
         .btn-facebook:hover {
             box-shadow: 0 8px 25px rgba(24, 119, 242, 0.45);
-            transform: translateY(-2px);
-        }
-
-        .btn-phone {
-            background: linear-gradient(135deg, #21262d, #161b22);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid #30363d;
-            color: #e6edf3;
-        }
-
-        .btn-phone:hover {
-            background: #30363d;
-            border-color: #58a6ff;
-            color: #ffffff;
             transform: translateY(-2px);
         }
 
         .btn-content {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
         .btn-icon {
-            font-size: 20px;
+            font-size: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
             background: rgba(255, 255, 255, 0.15);
         }
 
@@ -232,57 +256,34 @@
             transition: transform 0.2s ease;
         }
 
-        .btn-link:hover .btn-arrow {
-            transform: translateX(-4px);
+        [dir="rtl"] .btn-link:hover .btn-arrow {
+            transform: translateX(-5px);
         }
 
-        .phone-copy-box {
-            margin-top: 20px;
-            background: rgba(22, 27, 34, 0.8);
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            padding: 12px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            font-size: 13px;
-        }
-
-        .phone-num {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            color: #58a6ff;
-            direction: ltr;
-            letter-spacing: 1px;
-        }
-
-        .btn-copy {
-            background: #1f6feb;
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            padding: 6px 12px;
-            font-size: 11px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-copy:hover {
-            background: #388bfd;
+        [dir="ltr"] .btn-link:hover .btn-arrow {
+            transform: translateX(5px);
         }
 
         .footer {
-            margin-top: 26px;
+            margin-top: 28px;
             font-size: 11px;
             color: #484f58;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Outfit', 'Cairo', sans-serif;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <!-- Language Switcher Button -->
+        <div class="lang-switch-box">
+            <button class="btn-lang" onclick="toggleLanguage()" id="btn-lang-toggle">
+                <span>🌐</span>
+                <span id="btn-lang-text">English</span>
+            </button>
+        </div>
+
+        <!-- Avatar & Badge -->
         <div class="avatar-wrap">
             <div class="avatar">⚡</div>
             <div class="badge-online"></div>
@@ -290,60 +291,75 @@
 
         <h1>OshA</h1>
         <div class="subtitle">Apple Automation Engineer • Developer</div>
-        <p class="description">تواصل معي مباشرة عبر القنوات الرسمية بالأسفل</p>
+        <p class="description" id="desc-text">تواصل معي مباشرة عبر القنوات الرسمية بالأسفل</p>
 
+        <!-- Social Channels -->
         <div class="links-group">
             <!-- WhatsApp Button -->
             <a href="https://wa.me/iOshA" id="link-whatsapp" class="btn-link btn-whatsapp" target="_blank">
                 <div class="btn-content">
                     <span class="btn-icon">💬</span>
-                    <span>مراسلة عبر واتساب</span>
+                    <span id="txt-whatsapp">مراسلة عبر واتساب</span>
                 </div>
-                <span class="btn-arrow">◀</span>
+                <span class="btn-arrow" id="arrow-wa">◀</span>
             </a>
 
             <!-- Instagram Button -->
             <a href="https://instagram.com/iOshA" id="link-instagram" class="btn-link btn-instagram" target="_blank">
                 <div class="btn-content">
                     <span class="btn-icon">📸</span>
-                    <span>حساب انستجرام</span>
+                    <span id="txt-instagram">حساب انستجرام</span>
                 </div>
-                <span class="btn-arrow">◀</span>
+                <span class="btn-arrow" id="arrow-ig">◀</span>
             </a>
 
             <!-- Facebook Button -->
             <a href="https://facebook.com/iOshA" id="link-facebook" class="btn-link btn-facebook" target="_blank">
                 <div class="btn-content">
                     <span class="btn-icon">📘</span>
-                    <span>حساب الفيسبوك</span>
+                    <span id="txt-facebook">حساب الفيسبوك</span>
                 </div>
-                <span class="btn-arrow">◀</span>
+                <span class="btn-arrow" id="arrow-fb">◀</span>
             </a>
-
-
         </div>
 
-
-
-        <div class="footer">
-            © 2026 OshA Automation Tools • All Rights Reserved
+        <div class="footer" id="footer-text">
+            © 2026 OshA Automation Tools • جميع الحقوق محفوظة
         </div>
     </div>
 
     <script>
-        // إعدادات افتراضية يمكن تعديلها مباشرة أو تمريرها في الرابط
+        const TRANSLATIONS = {
+            ar: {
+                desc: "تواصل معي مباشرة عبر القنوات الرسمية بالأسفل",
+                whatsapp: "مراسلة عبر واتساب",
+                instagram: "حساب انستجرام",
+                facebook: "حساب الفيسبوك",
+                arrow: "◀",
+                footer: "© 2026 OshA Automation Tools • جميع الحقوق محفوظة",
+                btnText: "English"
+            },
+            en: {
+                desc: "Connect with me directly via the official channels below",
+                whatsapp: "Chat on WhatsApp",
+                instagram: "Instagram Profile",
+                facebook: "Facebook Profile",
+                arrow: "▶",
+                footer: "© 2026 OshA Automation Tools • All Rights Reserved",
+                btnText: "العربية"
+            }
+        };
+
         const DEFAULT_CONFIG = {
             whatsapp: "iOshA",
             instagram: "iOshA",
-            facebook: "iOshA",
-            phone: "+20 100 000 0000"
+            facebook: "iOshA"
         };
 
         const params = new URLSearchParams(window.location.search);
         const wa = params.get('wa') || params.get('whatsapp') || DEFAULT_CONFIG.whatsapp;
         const ig = params.get('ig') || params.get('instagram') || DEFAULT_CONFIG.instagram;
         const fb = params.get('fb') || params.get('facebook') || DEFAULT_CONFIG.facebook;
-        const phone = params.get('phone') || DEFAULT_CONFIG.phone;
 
         if (wa) {
             const cleanWa = wa.replace(/[@]/g, '');
@@ -359,24 +375,36 @@
             document.getElementById('link-facebook').href = fb.startsWith('http') ? fb : `https://facebook.com/${fb}`;
         }
 
-        if (phone) {
-            document.getElementById('link-phone').href = `tel:${phone.replace(/\s+/g, '')}`;
-            document.getElementById('display-phone').innerText = phone;
+        function setLanguage(lang) {
+            const t = TRANSLATIONS[lang] || TRANSLATIONS.ar;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+            document.getElementById('desc-text').innerText = t.desc;
+            document.getElementById('txt-whatsapp').innerText = t.whatsapp;
+            document.getElementById('txt-instagram').innerText = t.instagram;
+            document.getElementById('txt-facebook').innerText = t.facebook;
+            document.getElementById('footer-text').innerText = t.footer;
+            document.getElementById('btn-lang-text').innerText = t.btnText;
+
+            document.getElementById('arrow-wa').innerText = t.arrow;
+            document.getElementById('arrow-ig').innerText = t.arrow;
+            document.getElementById('arrow-fb').innerText = t.arrow;
+
+            try {
+                localStorage.setItem('preferred_lang', lang);
+            } catch (e) {}
         }
 
-        function copyNumber() {
-            const num = document.getElementById('display-phone').innerText;
-            navigator.clipboard.writeText(num).then(() => {
-                const btn = document.querySelector('.btn-copy');
-                const orig = btn.innerText;
-                btn.innerText = 'تم النسخ! ✓';
-                btn.style.background = '#2ea043';
-                setTimeout(() => {
-                    btn.innerText = orig;
-                    btn.style.background = '#1f6feb';
-                }, 1500);
-            });
+        function toggleLanguage() {
+            const currentLang = document.documentElement.lang || 'ar';
+            const nextLang = currentLang === 'ar' ? 'en' : 'ar';
+            setLanguage(nextLang);
         }
+
+        // Initialize language
+        const initialLang = params.get('lang') || localStorage.getItem('preferred_lang') || 'ar';
+        setLanguage(initialLang);
     </script>
 </body>
 
